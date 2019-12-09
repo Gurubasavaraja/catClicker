@@ -341,16 +341,3 @@ var addCat = {
 }
 main.init();
 
-
-function bike() {
-    var name = "Ninja";
-    this.maker = "Kawasaki";
-    console.log(name + " " + this.maker);  // undefined Bajaj
-}
-
-var name = "Pulsar";
-var maker = "Bajaj";
-
-obj = new bike();
-
-console.log(obj);
