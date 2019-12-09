@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="../CSS/stye.css" rel="stylesheet" />
+    <!-- <script type="text/javascript" src="../JS/first.json"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="mainHeader">
+            <h5>Cat Clicker App</h5>
+        </div>
+        <div id="catListbarRes" class="catListbarRes">
+
+        </div>
+        <div class="mainBody">
+            <div id="catListbar" class="catListbar">
+
+            </div>
+            <div id="displaycenter" class="displaycenter">
+                <span class="cat-name"></span>
+                <span class="count"></span>
+                <img class="img" id="dImages" />
+                <span class="ageCate"></span>
+            </div>
+            <div id="formbar" class="formbar">
+                <button onclick="addCat.toggle()" id="toggle">close</button>
+                <form onsubmit="addCat.edit(event)">
+                    <fieldset>
+                        <legend>Form</legend>
+                        <div>Cat Name</div> <input type="text" required id="catName" name="name" />
+                        <div>Cat Image
+                            <div id="catImg">
+                                <input id="file" type="file" name="img" />
+                                <span
+                                    style="margin:0.5em 0em ;text-overflow: ellipsis;white-space: nowrap;display: block;overflow: hidden;"
+                                    id="filename"></span>
+                            </div>
+                        </div>
+                        <div>Cat Cliks</div><input type="text" id="clicks" name="Cliks" />
+                        <button type="submit">submit</button>
+                        <button type="reset">reset</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="mainFooter">
+            <h3>Cats Image Gallery</h3>
+            <div id="gallery" class="gallery">
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../JS/second.js"></script>
+
+</body>
+
+</html>

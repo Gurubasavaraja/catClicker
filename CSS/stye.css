@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+.main
+{
+    display: flex;
+    /* border: 1px solid black; */
+width: 76%;
+height: auto;
+margin: auto;
+flex-flow: column;
+box-sizing: border-box
+}
+.main>.mainHeader
+{
+    border-top: 2px solid #ced4da;
+border-bottom: 2px solid #ced4da;
+    width: 98%;
+    height: auto;
+    min-height: 1em;
+    box-sizing:border-box;
+    margin: auto;   
+   
+}
+.main>.mainHeader>h5
+{
+    font-size: 2em;
+margin: 8px;
+}
+/* mainHeader complete */
+
+.main >.mainBody
+{
+width: 98%;
+height: auto;
+margin: 1em  auto 0px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content:space-between
+}
+.main >.mainBody>.catListbar
+{
+
+width: 20%;
+height: auto;
+overflow-wrap: break-word
+}
+.ri
+{
+    border: 1px solid #ced4da;
+border-radius: 3px;
+width: 95%;
+height: auto;
+padding: 3px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+font-size: 1em;
+font-weight: 400;
+padding: 0.6em;
+text-transform: capitalize
+}
+ul{
+    padding: 0px;
+    margin: 1.1em;
+}
+li.ri div:first-child
+{
+    align-self: center;
+}
+.ri:hover
+{
+    background-color:#1f74cf;
+    color: white;
+    filter: none!important
+}
+.liStyle{
+    
+        border: 1px solid #ced4da;
+    border-radius: 50%;
+    padding: 0.1em 0.4em;
+    width: auto;
+    text-align: center;
+    background-color: slategrey;
+    color: white;
+    font-weight: 600
+}
+
+.main >.mainBody>.displaycenter
+{
+width: 40%;
+    height: 50vh;
+    align-self: flex-start;
+    border: 1px solid #ced4da;
+    display: flex;
+    flex-direction: column;
+}
+.main >.mainBody>.displaycenter span
+{
+font-size: 1.6em;
+    font-weight: 500;
+    margin: 0.1em 0.4em;
+    color: #495057;
+    text-transform: capitalize
+}
+.main >.mainBody>.displaycenter span[class="count"]
+{
+font-size: 1.1em;
+    font-weight: 500;
+    margin:0 0.5em 0.5em;
+    color: #495057;
+    text-transform: capitalize
+}
+.main >.mainBody>.displaycenter img
+{
+width: 100%;
+       height: 80%!important;
+object-fit: cover
+}
+.main >.mainBody>.formbar
+{
+   
+width: 20%;
+height: auto;
+align-self: flex-start
+}
+legend
+{
+        font-size: 1.5em;
+    color: #3c5165;
+}
+fieldset
+{
+    box-sizing: border-box;
+    width: 100%!important;
+    padding: 0px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 1em;
+        min-width: 100%;
+}
+/*main body complete*/
+.main >.mainFooter
+{
+border-top: 2px solid #ced4da;
+width: 98%;
+height: auto;
+margin: 1em auto 0px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-between
+}
+.main >.mainFooter h3
+{
+margin: 5px
+}
+
+.main >.mainFooter>.gallery
+{
+border-top: 2px solid #ced4da;
+width: 100%;
+height: 30vh;
+margin: 0.2em auto 0px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;;
+justify-content: space-evenly;
+}
+
+
+input
+{
+    
+    display: block;
+    width: 77%;
+        margin: 0.1em 0em 0.9em;;
+    height: 1.2em;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+   text-indent: 0.5em
+}
+
+input[type="file"]
+{
+    display: block;
+    /* width: 77%; */
+    margin: 0;
+    opacity: 0;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 0;
+}
+#catImg
+{
+
+    display: block;
+    width: 77%;
+        margin: 0.1em 0em 2em;;
+    height: 1.2em;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+   
+    
+}
+
+
+button[type="submit"]
+{
+       cursor: pointer;
+    color: #fff!important;
+    background-color: #007bff!important;
+    border-color: #007bff;
+    display:inline-block;
+    cursor: pointer; 
+    border: 1px solid transparent;
+    padding: .375em .75em;
+    font-size: 1em;
+    border-radius: .25rem;
+   
+}
+button[type="reset"]
+{
+       cursor: pointer;
+    color: #fff!important;
+    background-color: #dc3545!important;
+    border-color: #dc3545;
+    display:inline-block;
+    cursor: pointer; 
+    border: 1px solid transparent;
+    padding: .375em .75em;
+    font-size: 1em;
+    border-radius: .25rem;
+
+}
+.gitem
+{
+    width: 20%;
+    height: auto;
+    border: 1px solid #ced4da;
+ margin: 5px;
+ display: flex;
+ flex-direction: column
+}
+img[class="gimg"]
+{
+    width: 100%;
+height: 70%;
+
+}
+#gstyle
+{
+    display: flex;
+    flex-direction: column;
+    color: #495057;
+    text-transform: capitalize;
+
+}
+#gstyle>div
+{
+   margin:0.5em 0.5em 0.1em;;
+    font-size: 1.3em;
+    color: black;
+
+}
+#gstyle>div[id="lName"]
+{
+   margin:0.5em 0.5em;
+   font-size: 1.1em;
+    color: #495057;
+
+}
+button[id="toggle"]{
+    cursor: pointer;
+    color: #fff!important;
+    background-color: #007bff!important;
+    border-color: #007bff;
+    display: inline-block;
+    cursor: pointer; 
+    border: 1px solid transparent;
+    padding: .375em .75em;
+    font-size: 1em;
+    border-radius: .25rem;
+    /* transition: color 0.15s ease-in-out,background-color .15s ease-in-out */
+transition: all 0.25s  ease-in-out
+}
+button[id="toggle"]:active{
+background-color:green!important;   
+padding: 1em
+}
+
+/*----resp----*/
+@media only screen and (max-width:1200px) {
+  /* body {
+    background-color: green!important;
+  } */
+  .mainBody
+  {
+      flex-direction:column!important;
+      align-items: center!important;
+      width: 100%!important
+  }
+  .catListbar
+  {
+      width: 100%!important
+  }
+  .displaycenter
+  {
+      height: auto!important;
+      align-self: center!important;
+      width: 100%!important
+  } .displaycenter img
+  {
+     
+      width: auto!important
+  }
+
+  .formbar
+  {
+      align-self: center!important;
+      width: 100%!important
+  }
+  .mainFooter
+  {
+      width: 100%!important;
+        flex-direction: column!important;
+  }
+  .gallery
+  {
+      flex-direction: column!important;
+      height: auto!important;
+  }
+  .gitem
+  {
+      width: 100%!important
+  }
+}
