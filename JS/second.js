@@ -42,9 +42,10 @@ var data = {
     ]
 }
 var main = {
+    //main Object it will intial renders the all components or sections
 
     init: function () {
-        data.currentcat = data.cats[0];
+        data.currentcat = data.cats[0];  //default cat would be assign to the currentcat property in the data Object
         sidebarView.init();
         catView.init();
         galleryView.init();
@@ -54,18 +55,18 @@ var main = {
         galleryView.focus();
         addCat.render(data.currentcat)
     },
-    getCats: function () {
+    getCats: function () {  //this will helps to contact  with the data object==> like getters
         return data.cats
     },
-    getClickedCats: function () {
+    getClickedCats: function () {  //this will returns the currentcat in the data object
         return data.currentcat;
     }
     ,
-    onClick: function (cat) {
-        return data.currentcat = cat;
+    onClick: function (cat) {        //when user select any cat from the sidebar or galleryView item this method will invoke by accepting that specific cat.
+        return data.currentcat = cat;// this method will manipulate the currentcat in the data object
     },
-    incrementClicks: function () {
-        data.currentcat.age += 1;
+    incrementClicks: function () {  //this method will invoke by clicking the center cat/image and it will increments the currentcat age; 
+        data.currentcat.age += 1;  //hence there is no state management like redux we should update the DOM elements contents
         catView.render();
         galleryView.domrender()
         catView.renderAge()
@@ -89,7 +90,7 @@ var main = {
         galleryView.domrender()
     }
 }
-var sidebarView = {
+var sidebarView = {       // this init method will create a DOM elements(cats list) by  dynamically depends on the how many cats are in the data object
     init: function () {
         this.sidebarView = document.querySelector(".catListbar");
 
@@ -115,9 +116,7 @@ var sidebarView = {
 
             li.addEventListener("click", function () {
                 main.onClick(cats);
-                // main.getClickedCats();
                 catView.render();
-                // main.count()
                 addCat.render(cats)
                 galleryView.focus()
 
@@ -135,7 +134,7 @@ var sidebarView = {
         })
         this.sidebarView.appendChild(ul);
     },
-    focus: function () {
+    focus: function () {   //this will focus the current selected cat in the sidebar 
         var s = document.getElementsByClassName("ri")
         for (let index = 0; index < s.length; index++) {
             s[index].style.borderColor = ""
@@ -146,7 +145,7 @@ var sidebarView = {
         s[data.currentcat.id].style.backgroundColor = "#89ada5"
         // s[data.currentcat.id].style.filter = "blur(0)"
     },
-    renderName: function (val) {
+    renderName: function (val) {            //this will render a catName when user editd from form
         var currentcat = main.getClickedCats();
         var ecat = document.getElementsByClassName("ri")
         var x = ecat[currentcat.id]
@@ -154,7 +153,7 @@ var sidebarView = {
 
 
 
-    }, renderAge: function (val) {
+    }, renderAge: function (val) {     //this will called when user incress
         var currentcat = main.getClickedCats();
         var ecat = document.getElementsByClassName("ri")
         var x = ecat[currentcat.id]
@@ -164,15 +163,15 @@ var sidebarView = {
 }
 
 var catView = {
-    init: function () {
+    init: function () {//this init method will be do center displayed cat
         this.catcontainer = document.getElementById("displaycenter")
-        this.countNum = document.getElementsByClassName("liStyle")
+        this.countNum = document.getElementsByClassName("liStyle") //this element is from the sidebar list>age of the cat 
         this.name = document.querySelector('.cat-name');
         this.count = document.querySelector('.count');
         this.ageCate = document.querySelector('.ageCate')
         this.img = document.querySelector('.img');
         this.img.addEventListener("click", function () {
-            main.incrementClicks();
+            main.incrementClicks();//increases the current cat age
             sidebarView.focus()
             galleryView.focus()
         })
@@ -183,14 +182,14 @@ var catView = {
         this.name.innerText = currentcat.name;
         this.img.src = currentcat.img;
         this.count.innerText = `Number of times clicked:${currentcat.age}`;
-        this.countNum[currentcat.id].innerText = currentcat.age
+        this.countNum[currentcat.id].innerText = currentcat.age//when user clicks the center image, Age in the sidebar will be update
         this.renderAge()
 
         this.img.addEventListener("click", function () {
-            addCat.render(currentcat)
+            addCat.render(currentcat)//this will updates the name and age in the  form of the current cat by sending current cat
         })
 
-    }, renderAge: function () {
+    }, renderAge: function () {//this will render a  status of the cats age
         var currentcat = main.getClickedCats();
         console.log("type", currentcat.id)
         if (currentcat.age >= 0 && currentcat.age <= 5) {
@@ -218,7 +217,7 @@ var galleryView = {
         this.render()
 
     },
-    render: function () {
+    render: function () { //this method will create a card for every cat
         var cats = main.getCats()
         cats.map(data => {
 
@@ -245,7 +244,6 @@ var galleryView = {
             this.img.src = data.img
             gitem.addEventListener("click", function () {
                 main.onClick(data);
-                // main.getClickedCats();
                 catView.render();
                 sidebarView.focus()
                 addCat.render(data)
@@ -257,7 +255,7 @@ var galleryView = {
 
                 }
                 this.style.border = "5px solid white"
-                this.style.boxShadow = "10px 10px 21px 12px rgba(0,0,0,0.75)"
+                this.style.boxShadow = "4px 10px 21px 10px rgba(0,0,0,0.75)"
                 this.style.filter = "blur(0px)"
             })
             this.domrender(data)
@@ -273,12 +271,12 @@ var galleryView = {
 
         }
         s[data.currentcat.id].style.border = "5px solid white"
-        s[data.currentcat.id].style.boxShadow = "10px 10px 21px 12px rgba(0,0,0,0.75)"
+        s[data.currentcat.id].style.boxShadow = "4px 10px 21px 10px rgba(0,0,0,0.75)"
 
     },
     domrender: function (currentcatData) {
         var currentcat;
-        if (currentcatData) {
+        if (currentcatData) {// this if condition because of currentcat would be  default cat or selected cat
 
             currentcat = currentcatData;
 
@@ -296,8 +294,8 @@ var galleryView = {
     },
 
 }
-var addCat = {
-    init: function () {
+var addCat = { //this will be belongs to form operations
+    init: function () {     //this will access the form atribute for further operatons
         this.catName = document.getElementById("catName")
         this.file = document.getElementById("file")
         this.clicks = document.getElementById("clicks")
@@ -305,7 +303,7 @@ var addCat = {
         this.form = document.getElementsByTagName("form")
 
     },
-    render: function (data) {
+    render: function (data) {// this will update the form content when user clicks center cat or default cat
         if (data) {
             this.catName.value = data.name
             this.clicks.value = data.age
@@ -314,7 +312,7 @@ var addCat = {
 
         }
     },
-    edit: function (event) {
+    edit: function (event) { // this will be the form submition method
         event.preventDefault()
         main.updateTitle(this.catName.value)
         main.updateAge(Number(this.clicks.value))
@@ -340,4 +338,3 @@ var addCat = {
     }
 }
 main.init();
-
